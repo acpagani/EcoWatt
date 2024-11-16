@@ -31,8 +31,8 @@ export default function LandingPage() {
         <Hero ref={refHero} refNext={refRevolution}/>
         <Revolution ref={refRevolution}/>
         <WhyUs ref={refWhyUs}/>
-        <JoinUs ref={refJoinUs}/>
         <Tokenization ref={refTokenization}/>
+        <JoinUs ref={refJoinUs}/>
         <Contact ref={refContact}/>
       </main>
       <Footer />
