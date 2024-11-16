@@ -2,7 +2,6 @@ import { useRef } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import JoinUs from "./Sections/JoinUs";
-import Contact from "./Sections/Contact";
 import Hero from "./Sections/Hero";
 import Revolution from "./Sections/Revolution";
 import Tokenization from "./Sections/Tokenization";
@@ -15,7 +14,6 @@ export default function LandingPage() {
   const refWhyUs = useRef(null);
   const refJoinUs = useRef(null);
   const refTokenization = useRef(null);
-  const refContact = useRef(null);
 
   return (
     <>
@@ -24,8 +22,7 @@ export default function LandingPage() {
       refRevolution={refRevolution} 
       refWhyUs={refWhyUs} 
       refJoinUs={refJoinUs}
-      refTokenization={refTokenization} 
-      refContact={refContact}
+      refTokenization={refTokenization}
       />
       <main>
         <Hero ref={refHero} refNext={refRevolution}/>
@@ -33,7 +30,6 @@ export default function LandingPage() {
         <WhyUs ref={refWhyUs}/>
         <Tokenization ref={refTokenization}/>
         <JoinUs ref={refJoinUs}/>
-        <Contact ref={refContact}/>
       </main>
       <Footer />
     </>

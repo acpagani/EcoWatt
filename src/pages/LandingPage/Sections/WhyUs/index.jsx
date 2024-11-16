@@ -47,8 +47,8 @@ const WhyUs = forwardRef(({}, ref) => {
               y2="1.70915e-06"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#9D9D9D" />
-              <stop offset="1" stop-color="white" />
+              <stop stopColor="#9D9D9D" />
+              <stop offset="1" stopColor="white" />
             </linearGradient>
           </defs>
         </svg>

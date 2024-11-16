@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Hero = forwardRef(({ refNext }, ref) => {
   const goToSection = (ref) => {
@@ -21,9 +22,9 @@ const Hero = forwardRef(({ refNext }, ref) => {
           <p className="text-xl text-eGray">
             O futuro da energia nas indústrias
           </p>
-          <button className="bg-eBlue text-eGray px-6 py-2 mt-4 rounded-lg hover:bg-eDarkBlue hover:text-eWhite transition-colors duration-300">
+          <Link to={"/auth"} className="bg-eBlue text-eGray px-6 py-2 mt-4 rounded-lg hover:bg-eDarkBlue hover:text-eWhite transition-colors duration-300">
             Comece agora
-          </button>
+          </Link>
         </div>
         <button onClick={() => goToSection(refNext)}>
           <IoIosArrowDown className="text-sWhite text-4xl mx-auto mt-10 animate-bounce" />

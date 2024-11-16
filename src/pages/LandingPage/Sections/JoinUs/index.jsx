@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import { Link } from "react-router-dom";
 
 const JoinUs = forwardRef(({}, ref) => {
   return (
@@ -11,7 +12,7 @@ const JoinUs = forwardRef(({}, ref) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_1_3)">
+          <g clipPath="url(#clip0_1_3)">
             <path
               d="M73.5 147C114.093 147 147 114.093 147 73.5C147 32.9071 114.093 0 73.5 0C32.9071 0 0 32.9071 0 73.5C0 114.093 32.9071 147 73.5 147Z"
               fill="#10D48E"
@@ -39,9 +40,9 @@ const JoinUs = forwardRef(({}, ref) => {
             mudança hoje. Você não estará apenas se juntando a uma revolução
             energética, você estará liderando-a.
           </p>
-          <button className="bg-eGray text-eWhite py-2 px-5 rounded-lg hover:bg-eGreen hover:text-eGray transition-colors duration-500">
+          <Link to={"/auth"} className="bg-eDarkBlue text-eWhite py-2 px-5 rounded-lg hover:bg-eGreen transition-colors duration-500">
             Entrar
-          </button>
+          </Link>
         </div>
       </div>
     </section>

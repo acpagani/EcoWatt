@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
+
 export default function Header({
   refRevolution,
   refWhyUs,
   refJoinUs,
-  refTokenization,
-  refContact,
+  refTokenization
 }) {
   const goToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -39,22 +40,19 @@ export default function Header({
           </button>
           <button
             className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
-            onClick={() => goToSection(refJoinUs)}
-          >
-            Junte-se
-          </button>
-          <button
-            className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
             onClick={() => goToSection(refTokenization)}
           >
             Tokenização
           </button>
           <button
             className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
-            onClick={() => goToSection(refContact)}
+            onClick={() => goToSection(refJoinUs)}
           >
-            Entre em contato
+            Junte-se
           </button>
+          <Link to={"/auth"} className="border border-eWhite px-2 py-1 rounded-md text-eWhite font-bold hover:border-eDarkBlue hover:bg-eDarkBlue transition-all duration-300">
+            Entrar
+          </Link>
         </nav>
       </div>
     </header>
