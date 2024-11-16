@@ -1,6 +1,9 @@
-export default function Footer() {
+export default function Footer({ isLP = false }) {
   return (
-    <footer className="w-full bg-eGray h-[30vh]">
+    <footer
+      className="w-full bg-eGray"
+      style={{ height: isLP ? "30vh" : "20vh" }}
+    >
       <div className="container px-20 mx-auto h-full flex flex-col gap-10 justify-center">
         <div className="flex flex-col items-center gap-1">
           <svg
@@ -19,5 +22,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

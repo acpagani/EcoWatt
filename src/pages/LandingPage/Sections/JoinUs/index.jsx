@@ -3,7 +3,14 @@ import { Link } from "react-router-dom";
 
 const JoinUs = forwardRef(({}, ref) => {
   return (
-    <section ref={ref} className="w-full min-h-[100vh] bg-eWhite flex">
+    <section
+      ref={ref}
+      className="w-full min-h-[100vh] bg-eWhite flex bg-repeat"
+      style={{
+        backgroundImage:
+          "url('https://www.transparenttextures.com/patterns/cubes.png')",
+      }}
+    >
       <div className="container mx-auto flex flex-col gap-10 items-center self-center">
         <svg
           width="147"
@@ -40,7 +47,10 @@ const JoinUs = forwardRef(({}, ref) => {
             mudança hoje. Você não estará apenas se juntando a uma revolução
             energética, você estará liderando-a.
           </p>
-          <Link to={"/auth"} className="bg-eDarkBlue text-eWhite py-2 px-5 rounded-lg hover:bg-eGreen transition-colors duration-500">
+          <Link
+            to={"/auth"}
+            className="bg-eDarkBlue text-eWhite py-2 px-5 rounded-lg hover:bg-eGreen transition-colors duration-500"
+          >
             Entrar
           </Link>
         </div>

@@ -23,6 +23,7 @@ export default function LandingPage() {
       refWhyUs={refWhyUs} 
       refJoinUs={refJoinUs}
       refTokenization={refTokenization}
+      isLP={true}
       />
       <main>
         <Hero ref={refHero} refNext={refRevolution}/>
@@ -31,7 +32,7 @@ export default function LandingPage() {
         <Tokenization ref={refTokenization}/>
         <JoinUs ref={refJoinUs}/>
       </main>
-      <Footer />
+      <Footer isLP={true}/>
     </>
   )
 }

@@ -4,7 +4,8 @@ export default function Header({
   refRevolution,
   refWhyUs,
   refJoinUs,
-  refTokenization
+  refTokenization,
+  isLP = false,
 }) {
   const goToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -13,7 +14,10 @@ export default function Header({
   return (
     <header className="w-full bg-eGreen h-[10vh]">
       <div className="container px-20 mx-auto flex justify-between">
-        <div className="flex items-center">
+        <div
+          className="flex items-center justify-center"
+          style={{ width: isLP ? "auto" : "100%" }}
+        >
           <svg
             className="fill-eWhite w-32 h-20"
             width="103"
@@ -25,35 +29,40 @@ export default function Header({
             <path d="M15.6916 10.7188H8.58038L12.2868 0L0 14.9528H7.11172L3.4053 25.6713L15.6916 10.7188Z" />
           </svg>
         </div>
-        <nav className="hidden md:flex items-center gap-10">
-          <button
-            className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
-            onClick={() => goToSection(refRevolution)}
-          >
-            A Revolução
-          </button>
-          <button
-            className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
-            onClick={() => goToSection(refWhyUs)}
-          >
-            Por que nós?
-          </button>
-          <button
-            className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
-            onClick={() => goToSection(refTokenization)}
-          >
-            Tokenização
-          </button>
-          <button
-            className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
-            onClick={() => goToSection(refJoinUs)}
-          >
-            Junte-se
-          </button>
-          <Link to={"/auth"} className="border border-eWhite px-2 py-1 rounded-md text-eWhite font-bold hover:border-eDarkBlue hover:bg-eDarkBlue transition-all duration-300">
-            Entrar
-          </Link>
-        </nav>
+        {isLP && (
+          <nav className="hidden md:flex items-center gap-10">
+            <button
+              className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
+              onClick={() => goToSection(refRevolution)}
+            >
+              A Revolução
+            </button>
+            <button
+              className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
+              onClick={() => goToSection(refWhyUs)}
+            >
+              Por que nós?
+            </button>
+            <button
+              className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
+              onClick={() => goToSection(refTokenization)}
+            >
+              Tokenização
+            </button>
+            <button
+              className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
+              onClick={() => goToSection(refJoinUs)}
+            >
+              Junte-se
+            </button>
+            <Link
+              to={"/auth"}
+              className="border border-eWhite px-2 py-1 rounded-md text-eWhite font-bold hover:border-eDarkBlue hover:bg-eDarkBlue transition-all duration-300"
+            >
+              Entrar
+            </Link>
+          </nav>
+        )}
       </div>
     </header>
   );

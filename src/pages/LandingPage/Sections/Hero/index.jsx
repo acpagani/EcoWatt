@@ -17,14 +17,21 @@ const Hero = forwardRef(({ refNext }, ref) => {
       }}
     >
       <div className="container mx-auto px-20 flex flex-col h-full justify-between pb-10">
-        <div className="flex flex-col justify-center items-center h-full container">
-          <h1 className="text-7xl font-bold text-eGray">EcoWatt</h1>
-          <p className="text-xl text-eGray">
-            O futuro da energia nas indústrias
-          </p>
-          <Link to={"/auth"} className="bg-eBlue text-eGray px-6 py-2 mt-4 rounded-lg hover:bg-eDarkBlue hover:text-eWhite transition-colors duration-300">
-            Comece agora
-          </Link>
+        <div className="flex items-center flex-1 justify-evenly container">
+          <div className="flex flex-col justify-center items-start">
+            <h1 className="text-7xl font-bold text-eGray">EcoWatt</h1>
+            <p className="text-xl text-eGray">
+              O futuro da energia nas indústrias
+            </p>
+            <Link to={"/auth"} className="bg-eBlue text-eGray px-6 py-2 mt-4 border border-black rounded-lg hover:bg-eDarkBlue hover:text-eWhite transition-colors duration-300">
+              Comece agora
+            </Link>
+          </div>
+          <video src="/assets/video/heroVideo.mp4" autoPlay muted width={"300px"} height={"400px"} loop style={{
+            borderRadius: "20px",
+          }}>
+
+          </video>
         </div>
         <button onClick={() => goToSection(refNext)}>
           <IoIosArrowDown className="text-sWhite text-4xl mx-auto mt-10 animate-bounce" />
