@@ -34,7 +34,7 @@ export default function SigninForm() {
     auth.push(user);
     localStorage.setItem("auth", JSON.stringify(auth));
     alert("Cadastro realizado com sucesso!");
-    window.location.replace("/home");
+    window.location.replace("/service");
   };
 
   return (

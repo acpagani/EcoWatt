@@ -18,7 +18,7 @@ export default function LoginForm() {
 
     if (isValid) {
         alert("Login realizado com sucesso! Seja bem-vindo!");
-        window.location.replace("/home");
+        window.location.replace("/service");
     }
     else {
         alert("Dados incorretos, tente novamente.")
