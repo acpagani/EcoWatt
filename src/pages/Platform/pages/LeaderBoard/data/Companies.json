@@ -1,0 +1,74 @@
+[
+    {
+        "name": "EcoTech Ltda",
+        "category": "Iniciante Sustentável",
+        "points": "15",
+        "isUser": false
+    },
+    {
+        "name": "VerdeInova S.A.",
+        "category": "Iniciante Sustentável",
+        "points": "19",
+        "isUser": false
+    },
+    {
+        "name": "Energia Nova",
+        "category": "Iniciante Sustentável",
+        "points": "8",
+        "isUser": false
+    },
+    {
+        "name": "SustentaCorp",
+        "category": "Eficiente em Evolução",
+        "points": "35",
+        "isUser": false
+    },
+    {
+        "name": "RenovaIndústria",
+        "category": "Eficiente em Evolução",
+        "points": "42",
+        "isUser": false
+    },
+    {
+        "name": "EcoLogística",
+        "category": "Eficiente em Evolução",
+        "points": "28",
+        "isUser": false
+    },
+    {
+        "name": "BioEnergia Global",
+        "category": "Avançado Verde",
+        "points": "63",
+        "isUser": false
+    },
+    {
+        "name": "Planeta Verde",
+        "category": "Avançado Verde",
+        "points": "77",
+        "isUser": false
+    },
+    {
+        "name": "Sustentável S.A.",
+        "category": "Avançado Verde",
+        "points": "58",
+        "isUser": false
+    },
+    {
+        "name": "Futuro Limpo",
+        "category": "Líder Sustentável",
+        "points": "89",
+        "isUser": false
+    },
+    {
+        "name": "Energia Pura",
+        "category": "Líder Sustentável",
+        "points": "95",
+        "isUser": false
+    },
+    {
+        "name": "EcoInovações",
+        "category": "Líder Sustentável",
+        "points": "82",
+        "isUser": false
+    }
+]
