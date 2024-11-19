@@ -1,4 +1,11 @@
 import { Link } from "react-router-dom";
+import {
+  DropdownTrigger,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  Button,
+} from "@nextui-org/react";
 
 export default function Header({
   refRevolution,
@@ -30,38 +37,99 @@ export default function Header({
           </svg>
         </div>
         {isLP && (
-          <nav className="hidden md:flex items-center gap-10">
-            <button
-              className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
-              onClick={() => goToSection(refRevolution)}
-            >
-              A Revolução
-            </button>
-            <button
-              className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
-              onClick={() => goToSection(refWhyUs)}
-            >
-              Por que nós?
-            </button>
-            <button
-              className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
-              onClick={() => goToSection(refTokenization)}
-            >
-              Tokenização
-            </button>
-            <button
-              className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
-              onClick={() => goToSection(refJoinUs)}
-            >
-              Junte-se
-            </button>
-            <Link
-              to={"/auth"}
-              className="border border-eWhite px-2 py-1 rounded-md text-eWhite font-bold hover:border-eDarkBlue hover:bg-eDarkBlue transition-all duration-300"
-            >
-              Entrar
-            </Link>
-          </nav>
+          <div className="flex items-center">
+            <nav className="hidden md:flex items-center gap-10">
+              <button
+                className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
+                onClick={() => goToSection(refRevolution)}
+              >
+                A Revolução
+              </button>
+              <button
+                className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
+                onClick={() => goToSection(refWhyUs)}
+              >
+                Por que nós?
+              </button>
+              <button
+                className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
+                onClick={() => goToSection(refTokenization)}
+              >
+                Tokenização
+              </button>
+              <button
+                className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
+                onClick={() => goToSection(refJoinUs)}
+              >
+                Junte-se
+              </button>
+              <Link
+                to={"/auth"}
+                className="border border-eWhite px-2 py-1 rounded-md text-eWhite font-bold hover:border-eDarkBlue hover:bg-eDarkBlue transition-all duration-300"
+              >
+                Entrar
+              </Link>
+            </nav>
+
+            <div className="md:hidden flex justify-center"> 
+              <Dropdown>
+                <DropdownTrigger>
+                  <Button isIconOnly>
+                    <img src="/assets/svg/menu/menu.svg" alt="Menu" />
+                  </Button>
+                </DropdownTrigger>
+                <DropdownMenu aria-label="Static Actions" className="bg-eGray border border-white rounded-md">
+                  <DropdownItem
+                    key="new"
+                    tabIndex={-1}
+                    className="hover:bg-gray-700 focus:bg-gray-700"
+                  >
+                    <Link onClick={() => goToSection(refRevolution)} className="text-white hover:text-gray-300">
+                      A Revolução
+                    </Link>
+                  </DropdownItem>
+                  <DropdownItem
+                    key="copy1"
+                    tabIndex={-1}
+                    className="hover:bg-gray-700 focus:bg-gray-700"
+                  >
+                    <Link onClick={() => goToSection(refWhyUs)} className="text-white hover:text-gray-300">
+                      Por que nós?
+                    </Link>
+                  </DropdownItem>
+                  <DropdownItem
+                    key="copy2"
+                    tabIndex={-1}
+                    className="hover:bg-gray-700 focus:bg-gray-700"
+                  >
+                    <Link onClick={() => goToSection(refTokenization)} className="text-white hover:text-gray-300">
+                      Tokenização
+                    </Link>
+                  </DropdownItem>
+                  <DropdownItem
+                    key="copy3"
+                    tabIndex={-1}
+                    className="hover:bg-gray-700 focus:bg-gray-700"
+                  >
+                    <Link onClick={() => goToSection(refJoinUs)} className="text-white hover:text-gray-300">
+                      Junte-se
+                    </Link>
+                  </DropdownItem>
+                  <DropdownItem
+                    key="copy4"
+                    tabIndex={-1}
+                    className="hover:bg-gray-700 focus:bg-gray-700"
+                  >
+                    <Link to="/auth" className="text-white hover:text-gray-300">
+                      Entrar
+                    </Link>
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+
+
+          </div>
         )}
       </div>
     </header>
