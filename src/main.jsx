@@ -23,6 +23,7 @@ const router = createBrowserRouter([
         element: <Plaftorm/>,
         children: [
           {index: true, element: <Dashboard/>},
+          {path: 'dashboard', element: <Dashboard/>},
           {path: 'leaderboard', element: <Leaderboard/>},
           {path: 'logs', element: <LogsHistory/>}
         ]
