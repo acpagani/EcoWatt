@@ -6,9 +6,9 @@ export default function Plaftorm() {
     <>
       <div className="w-screen h-screen flex">
         <Sidebar />
-        <main className="w-[80vw]">
+        <div className="w-[80vw]">
           <Outlet />
-        </main>
+        </div>
       </div>
     </>
   )

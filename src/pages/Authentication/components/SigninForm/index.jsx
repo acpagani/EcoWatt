@@ -30,6 +30,7 @@ export default function SigninForm() {
       email,
       phone,
       password,
+      points: 0,
     };
     auth.push(user);
     localStorage.setItem("auth", JSON.stringify(auth));
