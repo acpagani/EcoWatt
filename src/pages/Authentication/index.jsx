@@ -14,7 +14,7 @@ export default function Authentication() {
       <Header />
       <main>
         <section
-          className="w-full min-h-[70vh] bg-repeat relative"
+          className="w-full min-h-[70vh] bg-repeat bg-eWhite relative"
           style={{
             backgroundImage:
               "url('https://www.transparenttextures.com/patterns/cubes.png')",

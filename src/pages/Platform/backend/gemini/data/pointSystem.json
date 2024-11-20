@@ -1,0 +1,199 @@
+{
+  "scoring_system": {
+    "total_maximum_points": 140,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Redução de Consumo",
+        "maximum_points": 30,
+        "criteria": [
+          {
+            "condition": "Redução de 5% no consumo",
+            "points": 5
+          },
+          {
+            "condition": "Redução de 10% no consumo",
+            "points": 10
+          },
+          {
+            "condition": "Redução de 20% no consumo",
+            "points": 20
+          },
+          {
+            "condition": "Redução de 30% ou mais no consumo",
+            "points": 30
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Energia Renovável",
+        "maximum_points": 25,
+        "criteria": [
+          {
+            "condition": "15% do consumo de fontes renováveis",
+            "points": 5
+          },
+          {
+            "condition": "30% do consumo de fontes renováveis",
+            "points": 10
+          },
+          {
+            "condition": "50% do consumo de fontes renováveis",
+            "points": 15
+          },
+          {
+            "condition": "70% ou mais do consumo de fontes renováveis",
+            "points": 25
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Redução do Pico de Demanda",
+        "maximum_points": 20,
+        "criteria": [
+          {
+            "condition": "Redução de 5% no pico de demanda",
+            "points": 5
+          },
+          {
+            "condition": "Redução de 10% no pico de demanda",
+            "points": 10
+          },
+          {
+            "condition": "Redução de 20% no pico de demanda",
+            "points": 15
+          },
+          {
+            "condition": "Redução de 30% ou mais no pico de demanda",
+            "points": 20
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Emissões de Carbono",
+        "maximum_points": 20,
+        "criteria": [
+          {
+            "condition": "Redução de 5% nas emissões",
+            "points": 5
+          },
+          {
+            "condition": "Redução de 10% nas emissões",
+            "points": 10
+          },
+          {
+            "condition": "Redução de 20% nas emissões",
+            "points": 15
+          },
+          {
+            "condition": "Neutralidade de carbono alcançada",
+            "points": 20
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Certificações",
+        "maximum_points": 20,
+        "criteria": [
+          {
+            "condition": "Certificação ISO 50001 obtida",
+            "points": 10
+          },
+          {
+            "condition": "Adesão aos I-RECs",
+            "points": 5
+          },
+          {
+            "condition": "Outras certificações relevantes",
+            "points": 5
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Inovação e Tecnologia",
+        "maximum_points": 15,
+        "criteria": [
+          {
+            "condition": "Implementação de sistemas de IA para gestão",
+            "points": 5
+          },
+          {
+            "condition": "Rede de monitoramento instalada",
+            "points": 5
+          },
+          {
+            "condition": "Sistemas de armazenamento de energia em uso",
+            "points": 5
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Engajamento",
+        "maximum_points": 10,
+        "criteria": [
+          {
+            "condition": "Treinamentos realizados",
+            "points_per_item": 2,
+            "maximum_points": 6
+          },
+          {
+            "condition": "Relatórios publicados",
+            "points_per_item": 2,
+            "maximum_points": 4
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Diversificação de Fontes Renováveis",
+        "maximum_points": 10,
+        "criteria": [
+          {
+            "condition": "Uso de 2 fontes renováveis diferentes",
+            "points": 5
+          },
+          {
+            "condition": "Uso de 3 ou mais fontes renováveis diferentes",
+            "points": 10
+          }
+        ]
+      }
+    ],
+    "efficiency_categories": [
+      {
+        "name": "Iniciante Sustentável",
+        "points_range": {
+          "min": 1,
+          "max": 35
+        }
+      },
+      {
+        "name": "Eficiente em Evolução",
+        "points_range": {
+          "min": 36,
+          "max": 70
+        }
+      },
+      {
+        "name": "Avançado Verde",
+        "points_range": {
+          "min": 71,
+          "max": 105
+        }
+      },
+      {
+        "name": "Líder Sustentável",
+        "points_range": {
+          "min": 106,
+          "max": 140
+        }
+      }
+    ]
+  }
+}
