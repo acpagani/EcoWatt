@@ -3,8 +3,11 @@ import { MdHistory, MdLeaderboard } from "react-icons/md";
 import SidebarButton from "./components/SidebarButton";
 import { IoIosClose } from "react-icons/io";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { useContext } from "react";
+import GeneratingContentContext from "../../context/GeneratingContentContext";
 
 export default function Sidebar({ onClick }) {
+  const generatingContent = useContext(GeneratingContentContext);
 
   return (
     <aside className=" lg:w-[20vw] h-full flex flex-col items-start gap-10 py-10 px-5  xl:px-14 border-r-2 bg-eWhite">
@@ -25,18 +28,34 @@ export default function Sidebar({ onClick }) {
       <nav className="flex flex-col items-start justify-between flex-1 w-full">
         <ul className="flex flex-col gap-5 w-full">
           <li>
-            <SidebarButton icon={<GoHomeFill className="size-5" />} text="Dashboard" to="/service/dashboard" />
+            <SidebarButton
+              icon={<GoHomeFill className="size-5" />}
+              text="Dashboard"
+              to="/service/dashboard"
+            />
           </li>
           <li>
-            <SidebarButton icon={<MdLeaderboard className="size-5" />} text="Placar" to="/service/leaderboard" />
+            <SidebarButton
+              icon={<MdLeaderboard className="size-5" />}
+              text="Placar"
+              to="/service/leaderboard"
+            />
           </li>
           <li>
-            <SidebarButton icon={<MdHistory className="size-5" />} text="Logs" to="/service/logs" />
+            <SidebarButton
+              icon={<MdHistory className="size-5" />}
+              text="Logs"
+              to="/service/logs"
+              generatingContent={generatingContent}
+            />
           </li>
         </ul>
         <button>Configurações</button>
       </nav>
-      <button className="block sm:hidden absolute -right-20 bottom-10 p-3 bg-eWhite rounded-full drop-shadow-md" onClick={onClick}>
+      <button
+        className="block sm:hidden absolute -right-20 bottom-10 p-3 bg-eWhite rounded-full drop-shadow-md"
+        onClick={onClick}
+      >
         <HiOutlineMenuAlt2 className="size-8" />
       </button>
     </aside>
