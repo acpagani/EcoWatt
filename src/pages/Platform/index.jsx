@@ -3,7 +3,7 @@ import Sidebar from "./components/Sidebar";
 import { useEffect, useState } from "react";
 import GeneratingContentContext from "./context/GeneratingContentContext";
 import MetricInput from "./components/MetricInput";
-import CallGemini from "./backend/gemini/API/index";
+import CallGemini from "./backend/gemini/CallGemini";
 
 export default function Plaftorm() {
   const [active, setActive] = useState(false);
