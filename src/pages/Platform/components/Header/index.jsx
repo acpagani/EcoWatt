@@ -7,7 +7,7 @@ export default function Header({ title }) {
 
   return (
     <>
-      <header className="w-full border-b-2 h-[20vh] px-8 py-5 flex justify-between items-center gap-4">
+      <header className="w-full border-b-2 h-[15vh] px-8 py-5 flex justify-between items-center gap-4">
         <h1 className="max-md:text-2xl text-4xl font-bold">{title}</h1>
         <button
           disabled={generatingContent}
