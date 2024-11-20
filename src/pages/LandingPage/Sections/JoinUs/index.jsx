@@ -40,7 +40,7 @@ const JoinUs = forwardRef(({}, ref) => {
           </defs>
         </svg>
 
-        <div className="flex flex-col gap-8 items-center">
+        <div className="flex flex-col gap-8 items-center max-md:px-10">
           <h2 className="text-4xl text-eGray">Junte-se a nós</h2>
           <p className="text-xl text-eGray max-w-[30rem]">
             Ama o som da EcoWatt? Nós achamos que sim! Clique abaixo e faça a
