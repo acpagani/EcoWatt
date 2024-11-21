@@ -31,8 +31,8 @@ export const signup = async (email, name, password, phone, category = '') => {
 
 export const emailExists = async (email) => {
     try {
-        const response = await api.get(`/companies?filters[email][$eq]=${email}`);
-        return response.data.length > 0;
+        const response = await api.get(`/companies?filters[email][$eq]=${email}`);        
+        return response.data.data.length > 0;
     } catch (error) {
         return error.response.data;
     }

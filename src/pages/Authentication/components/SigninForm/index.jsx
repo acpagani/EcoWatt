@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PatternFormat } from "react-number-format";
-import { signup } from "../../../../api/auth";
+import { signup, emailExists } from "../../../../api/auth";
 import Swal from 'sweetalert2'
 
 export default function SigninForm() {
@@ -14,19 +14,15 @@ export default function SigninForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    Swal.showLoading()
     if (password !== passwordConfirm) {
-      alert("As senhas não coincidem");
+      Swal.fire({
+        icon: "error",
+        title: "Erro!",
+        text: "As senhas não coincidem!",
+      });
       return;
     }
-    let alreadyExists = false;
-    auth.forEach((user) => {
-      if (user.email === email) {
-        alert("E-mail já cadastrado");
-        alreadyExists = true;
-      }
-    });
-    if (alreadyExists) return;
     const user = {
       name,
       email,
@@ -35,21 +31,39 @@ export default function SigninForm() {
       points: 0,
     };
     try {
+      const emailExistsResponse = await emailExists(email);
+      if (emailExistsResponse) {
+        Swal.fire({
+          icon: "error",
+          title: "Erro!",
+          text: "E-mail já cadastrado!",
+        });
+        return
+      }
       const response = await signup(email, name, password, phone);
-  
+      
       if (response?.error) {
-        alert(response.error.message || "Erro ao realizar o cadastro");
+        Swal.close();
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Algo deu errado ao realizar o cadastro!",
+        });
         return;
       }
-  
+      Swal.close();
       Swal.fire({
         icon: "success",
         title: "Cadastro realizado com sucesso!",
         text: "Usuário cadastrado com sucesso!",
         confirmButtonText: "Ok",
-      }).then(() => window.location.replace("/service"));
+      }).then(() => 
+        localStorage.setItem("user", JSON.stringify(response.data)),
+        window.location.replace("/service")
+      );
     } catch (error) {
       console.error("Erro durante o cadastro:", error);
+      Swal.close();
       Swal.fire({
         icon: "error",
         title: "Oops...",
