@@ -58,7 +58,7 @@ export default function SigninForm() {
         text: "Usuário cadastrado com sucesso!",
         confirmButtonText: "Ok",
       }).then(() => 
-        localStorage.setItem("user", JSON.stringify(response.data)),
+        localStorage.setItem("user", JSON.stringify(email)),
         window.location.replace("/service")
       );
     } catch (error) {
