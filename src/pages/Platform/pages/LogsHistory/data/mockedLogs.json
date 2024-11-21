@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "efficiencyLog": "Relatório de desempenho energético para a sua empresa:\n\nPontuação geral: 123/140\nClassificação: Avançado Verde\n\n**Consumo de Energia:**\n* Redução de 5% no consumo de energia em comparação com o último levantamento.\n\n**Energia Renovável:**\n* Atualmente, 15% do consumo de energia provém de fontes renováveis.\n* Há utilização de apenas uma fonte de energia renovável.\n\n**Pico de Demanda:**\n* Redução de 4% no pico de demanda em comparação com o último levantamento.\n\n**Emissões de Carbono:**\n* Emissões de carbono estáveis em comparação com o último levantamento.\n\n**Recomendações:**\n* **Diversificar as fontes de energia renováveis:** Explorar a possibilidade de incorporar outras fontes de energia renováveis, como energia solar ou eólica, para aumentar a proporção de energia renovável no consumo total e reduzir a dependência de uma única fonte.\n* **Otimizar o consumo de energia:** Implementar medidas adicionais para reduzir o consumo de energia, como a instalação de equipamentos mais eficientes ou a adoção de práticas de gestão de energia.\n* **Reduzir o pico de demanda:** Implementar estratégias para reduzir o pico de demanda, como o uso de sistemas de armazenamento de energia ou a implementação de programas de resposta à demanda.\n* **Monitorar as emissões de carbono:** Monitorar as emissões de carbono regularmente e implementar medidas para reduzi-las, como a adoção de tecnologias de baixo carbono ou a compensação de emissões.\n* **Buscar certificações:** Considerar a obtenção de certificações relevantes, como a ISO 50001, para demonstrar o compromisso com a eficiência energética e a sustentabilidade.\n\nEste relatório fornece uma visão geral do desempenho energético da sua empresa e identifica áreas de melhoria. Ao implementar as recomendações, você poderá reduzir seus custos de energia, melhorar sua sustentabilidade e aumentar sua pontuação no ranking de desempenho energético.",
+    "points": 123,
+    "userCategory": "Avançado Verde",
+    "date": "2021-09-01"
+  },
+  {
+    "id": 2,
+    "efficiencyLog": "Relatório de desempenho energético para a sua empresa:\n\nPontuação geral: 110/140\nClassificação: Avançado Verde\n\n**Consumo de Energia:**\n* Redução de 20% no consumo de energia em comparação com o último levantamento.\n\n**Energia Renovável:**\n* Atualmente, 50% do consumo provém de fontes renováveis.\n* Uso de 2 fontes renováveis diferentes.\n\n**Pico de Demanda:**\n* Redução de 20% no pico de demanda.\n\n**Emissões de Carbono:**\n* Redução de 20% nas emissões.\n\n**Certificações:**\n* Certificação ISO 50001 obtida.\n\n**Inovação e Tecnologia:**\n* Implementação de sistemas de IA para gestão.\n* Rede de monitoramento instalada.\n\n**Engajamento:**\n* Treinamentos realizados: 2 (4 pontos).\n* Relatórios publicados: 1 (2 pontos).\n\n**Recomendações:**\n* **Aumentar o uso de fontes renováveis:** Buscar atingir 70% ou mais no consumo de fontes renováveis.\n* **Inovar em tecnologia:** Considerar a implementação de sistemas de armazenamento de energia.\n* **Expandir o engajamento:** Realizar mais treinamentos e publicar relatórios para maximizar os pontos nesta categoria.\n\nEste relatório destaca o ótimo desempenho energético da sua empresa e sugere caminhos para se tornar um Líder Sustentável.",
+    "points": 110,
+    "userCategory": "Avançado Verde",
+    "date": "2021-08-01"
+  },
+  {
+    "id": 3,
+    "efficiencyLog": "Relatório de desempenho energético para a sua empresa:\n\nPontuação geral: 70/140\nClassificação: Eficiente em Evolução\n\n**Consumo de Energia:**\n* Redução de 10% no consumo de energia.\n\n**Energia Renovável:**\n* Atualmente, 30% do consumo provém de fontes renováveis.\n* Uso de 1 fonte renovável.\n\n**Pico de Demanda:**\n* Redução de 10% no pico de demanda.\n\n**Emissões de Carbono:**\n* Redução de 10% nas emissões.\n\n**Engajamento:**\n* Treinamentos realizados: 1 (2 pontos).\n\n**Recomendações:**\n* **Diversificar fontes renováveis:** Incorporar novas fontes para obter mais pontos.\n* **Aprimorar certificações:** Buscar certificações como a ISO 50001.\n* **Investir em tecnologia:** Implementar sistemas de IA e monitoramento.\n\nEste relatório indica progresso significativo e áreas para melhorar o desempenho energético.",
+    "points": 70,
+    "userCategory": "Eficiente em Evolução",
+    "date": "2021-07-01"
+  }
+]
