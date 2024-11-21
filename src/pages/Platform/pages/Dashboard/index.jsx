@@ -16,7 +16,7 @@ export default function Dashboard() {
     <>
       <OutletMain title="Dashboard">
         <div className="flex flex-col h-full gap-3 p-3 overflow-y-scroll">
-          <div className="grid grid-cols-1 md:grid-cols-2 basis-1/2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <ChartCard label="Consumo Mensal do Complexo">
               <LineChart data={lineChartData} />
             </ChartCard>

@@ -5,7 +5,7 @@ import logs from "./data/mockedLogs.json";
 export default function LogsHistory() {
   return (
     <OutletMain title="Histórico de Logs">
-      <div className="flex flex-col items-start gap-4 px-10 py-8 w-full lg:w-2/3 mx-auto">
+      <div className="flex flex-col items-start gap-6 px-10 py-8 w-full lg:w-2/3 mx-auto">
         {
           logs
           .slice()
