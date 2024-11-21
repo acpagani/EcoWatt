@@ -31,6 +31,7 @@ export default function SigninForm() {
       phone,
       password,
       points: 0,
+      category: "Indefinido: Faça sua primeira simulação",
     };
     auth.push(user);
     localStorage.setItem("auth", JSON.stringify(auth));

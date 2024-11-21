@@ -112,13 +112,13 @@ const Tokenization = forwardRef(({}, ref) => {
         </div>
         <div className="flex justify-between items-center pt-20">
           <div className="flex flex-col gap-5">
-            <h2 className="text-4xl text-eWhite">Tokenização</h2>
+            <h2 className="text-4xl text-eWhite font-bold">Tokenização</h2>
             <p className="text-xl text-eWhite max-w-prose mt-5">
               Nossos tokens de blockchain são mais do que apenas uma moeda
-              digital, são chaves para um mundo emocionante de benefícios.
-              Troque-os por descontos, bônus e muito mais. Ao abraçar o EcoWatt,
+              digital, são <span className="font-bold">chaves</span> para um mundo emocionante de <span className="font-bold">benefícios</span>.
+              Troque-os por <span className="font-bold">descontos, bônus e muito mais</span>. Ao abraçar o EcoWatt,
               você não está apenas optando por energia sustentável, você está
-              escolhendo um caminho cheio de recompensas para o futuro.
+              escolhendo um <span className="font-bold">caminho cheio de recompensas para o futuro</span>.
             </p>
           </div>
           <svg

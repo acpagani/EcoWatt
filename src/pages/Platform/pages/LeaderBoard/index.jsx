@@ -10,8 +10,8 @@ export default function Leaderboard() {
 
   const newCompanie = {
     name: user.name,
-    points: 45,
-    category: "Categoria",
+    points: user.points,
+    category: user.category,
     isUser: true
   }
 

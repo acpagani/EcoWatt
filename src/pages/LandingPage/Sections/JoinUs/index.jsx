@@ -43,9 +43,9 @@ const JoinUs = forwardRef(({}, ref) => {
         <div className="flex flex-col gap-8 items-center max-md:px-10">
           <h2 className="text-4xl text-eGray">Junte-se a nós</h2>
           <p className="text-xl text-eGray max-w-[30rem]">
-            Ama o som da EcoWatt? Nós achamos que sim! Clique abaixo e faça a
-            mudança hoje. Você não estará apenas se juntando a uma revolução
-            energética, você estará liderando-a.
+            Ama o som da EcoWatt? Nós achamos que sim! <span className="font-bold">Clique abaixo</span> e faça a
+            mudança <span className="font-bold">hoje</span>. Você não estará apenas se juntando a uma revolução
+            energética, você estará <span className="font-bold">liderando-a</span>.
           </p>
           <Link
             to={"/auth"}

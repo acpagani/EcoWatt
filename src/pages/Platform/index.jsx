@@ -4,10 +4,15 @@ import { useEffect, useState } from "react";
 import GeneratingContentContext from "./context/GeneratingContentContext";
 import MetricInput from "./components/MetricInput";
 import CallGemini from "./backend/gemini/CallGemini";
+import { BsStars } from "react-icons/bs";
+import SettingsModal from "./components/Sidebar/components/SettingsModal";
 
 export default function Plaftorm() {
   const [active, setActive] = useState(false);
   const { pathname } = useLocation();
+
+  const auth = localStorage.getItem("auth");
+  const user = JSON.parse(auth)[0];
 
   useEffect(() => {
     setActive(false);
@@ -42,6 +47,11 @@ export default function Plaftorm() {
 
     setGeneratingContent(false);
     console.log(result);
+    
+    const resultJson = JSON.parse(result);
+    user.points = resultJson.points;
+    user.category = resultJson.userCategory;
+    localStorage.setItem("auth", JSON.stringify([user]));
   };
 
   return (
@@ -117,14 +127,16 @@ export default function Plaftorm() {
               </div>
               <button
                 type="submit"
-                className="btn bg-eDarkBlue text-eWhite hover:text-eDarkBlue"
+                className="btn bg-eDarkBlue text-eWhite hover:text-eDarkBlue flex items-center justify-center gap-2"
               >
                 Submit
+                <BsStars className="size-5" />
               </button>
             </form>
           </div>
         </div>
       </dialog>
+      <SettingsModal />
     </GeneratingContentContext.Provider>
   );
 }
