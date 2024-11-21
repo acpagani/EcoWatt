@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import OutletMain from "../../components/OutletMain";
 import ChartCard from "./components/ChartCard";
 import BarChart from "./components/Charts/Bar";
@@ -9,7 +8,9 @@ import { lineChartData } from "./components/Charts/data/FakeLineData";
 import { pieChartData } from "./components/Charts/data/FakePieData";
 
 export default function Dashboard() {
-  const fakeProgressData = 75;
+
+  const fakeNumberSource = 5;
+
 
   return (
     <>
@@ -27,27 +28,14 @@ export default function Dashboard() {
             <ChartCard label="Redução do Pico de Demanda">
               <LineChart data={lineChartData} />
             </ChartCard>
-            <ChartCard label="% de Energia Renovável">
+            <ChartCard label="N° de Fontes de Energia Renovável">
               <div className="flex flex-col gap-2 h-full items-center justify-center">
-                <h3 className="text-lg">
-                  <span className="font-medium">{fakeProgressData}</span>%
-                </h3>
-                <div className="bg-eGray/20 basis-1/3 w-full rounded-full overflow-hidden">
-                  <motion.div
-                    className="h-full rounded-full bg-eGreen duration-300"
-                    initial="hidden"
-                    animate="visible"
-                    variants={{
-                      hidden: { width: 0 },
-                      visible: { width: `${fakeProgressData}%` },
-                    }}
-                  >
-                    &nbsp;
-                  </motion.div>
+                <div className="stat text-center">
+                  <div className="stat-value text-7xl">{fakeNumberSource}</div>
                 </div>
               </div>
             </ChartCard>
-            <ChartCard label="Fontes de Energia Renovável" isLast>
+            <ChartCard label="% de Energia Renovável" isLast>
               <div className="md:w-2/3 lg:w-1/2 mx-auto h-full flex items-center">
                 <PieChart data={pieChartData} />
               </div>

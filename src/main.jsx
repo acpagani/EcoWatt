@@ -10,6 +10,7 @@ import Dashboard from './pages/Platform/pages/Dashboard/index.jsx'
 import LogsHistory from './pages/Platform/pages/LogsHistory/index.jsx'
 import PageNotFound from './pages/PageNotFound/index.jsx'
 import Leaderboard from './pages/Platform/pages/LeaderBoard/index.jsx'
+import LogDetails from './pages/Platform/pages/LogDetails/index.jsx'
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,8 @@ const router = createBrowserRouter([
           {index: true, element: <Dashboard/>},
           {path: 'dashboard', element: <Dashboard/>},
           {path: 'leaderboard', element: <Leaderboard/>},
-          {path: 'logs', element: <LogsHistory/>}
+          {path: 'logs', element: <LogsHistory/>},
+          {path: 'logs/:id', element: <LogDetails/>},
         ]
       },
       {path: '*', element: <PageNotFound/>}
