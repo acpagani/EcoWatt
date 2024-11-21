@@ -2,10 +2,8 @@ import api from "./config";
 
 export const login = async (email, password) => {
   try {
-    const response = await api.post("/auth/local", {
-      identifier: email,
-      password,
-    });
+    const response = await api.get(`/companies?filters[email][$eq]=${email}&filters[password][$eq]=${password}`)
+    
     return response.data;
   } catch (error) {
     return error.response.data;
