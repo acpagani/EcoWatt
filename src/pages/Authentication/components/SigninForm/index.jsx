@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { PatternFormat } from "react-number-format";
+import { signup } from "../../../../api/auth";
+import Swal from 'sweetalert2'
 
 export default function SigninForm() {
   const [name, setName] = useState("");
@@ -10,7 +12,7 @@ export default function SigninForm() {
 
   let auth = JSON.parse(localStorage.getItem("auth")) || [];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (password !== passwordConfirm) {
@@ -32,10 +34,28 @@ export default function SigninForm() {
       password,
       points: 0,
     };
-    auth.push(user);
-    localStorage.setItem("auth", JSON.stringify(auth));
-    alert("Cadastro realizado com sucesso!");
-    window.location.replace("/service");
+    try {
+      const response = await signup(email, name, password, phone);
+  
+      if (response?.error) {
+        alert(response.error.message || "Erro ao realizar o cadastro");
+        return;
+      }
+  
+      Swal.fire({
+        icon: "success",
+        title: "Cadastro realizado com sucesso!",
+        text: "Usuário cadastrado com sucesso!",
+        confirmButtonText: "Ok",
+      }).then(() => window.location.replace("/service"));
+    } catch (error) {
+      console.error("Erro durante o cadastro:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Algo deu errado ao realizar o cadastro!",
+      });
+    }
   };
 
   return (
