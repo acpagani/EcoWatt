@@ -19,7 +19,7 @@ export default function SettingsModal() {
         >
           ✕
         </button>
-        <div className="flex items-start gap-14">
+        <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-14">
           <div className="flex flex-col gap-5">
             <h2 className="font-medium">Informações da Conta</h2>
             <div className="flex flex-col gap-3">
@@ -37,12 +37,12 @@ export default function SettingsModal() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-10">
-            <div className="flex flex-col items-center">
+          <div className="flex flex-col gap-5 sm:gap-10">
+            <div className="flex flex-col sm:items-center">
               <span className="font-medium">Pontuação</span>
               <span className="text-7xl">{user.points}</span>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col sm:items-center">
               <span className="font-medium">Categoria</span>
               <span>{user.category}</span>
             </div>
