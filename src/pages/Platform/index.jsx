@@ -46,11 +46,12 @@ export default function Plaftorm() {
     const userData = getUserDataLS();
     
     const responseSimulation = await createNewSimulation(userData.id, consumoTotal, carbonoEmitido, energiaRenovavel, fontesEnergiaRenovavel, reducaoPicoDemanda);
-    const responseLog = await createNewLog(userData.id, "Nova simulação realizada");
+    const responseLog = await createNewLog(userData.id, responseGemini);
 
     setGeneratingContent(false);
-    console.log(responseSimulation.data[0]);
+    console.log(responseLog);
     console.log(responseGemini);
+    
   };
 
   return (

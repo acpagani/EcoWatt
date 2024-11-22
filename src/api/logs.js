@@ -10,6 +10,15 @@ export const getUserLogs = async (company) => {
     }
 };
 
+export const getLogDetails = async (id) => {
+    try {
+        const response = await api.get(`/logs?filters[id][$eq]=${id}`);
+        return response.data;
+    } catch (error) {
+        return error.response.data;
+    }
+};
+
 export const createNewLog = async (company, content) => {
     try {
         const response = await api.post("/logs", {
