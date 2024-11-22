@@ -50,11 +50,10 @@ export default function SigninForm() {
         title: "Cadastro realizado com sucesso!",
         text: "Usuário cadastrado com sucesso!",
         confirmButtonText: "Ok",
-      }).then(() => 
-        localStorage.setItem("user", JSON.stringify(response.data)),
-        window.location.replace("/service")
-        
-      );
+      }).then(() => {
+        localStorage.setItem("user", JSON.stringify(response.data));
+        window.location.replace("/service");
+      });
     } catch (error) {
       console.error("Erro durante o cadastro:", error);
       Swal.close();
