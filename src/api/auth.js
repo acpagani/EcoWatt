@@ -10,7 +10,7 @@ export const login = async (email, password) => {
   }
 }
 
-export const signup = async (email, name, password, phone, pontuation = '0', category = '') => {
+export const signup = async (email, name, password, phone, pontuation = '0', category = 'Ainda não definido') => {
     try {
         const response = await api.post("/companies", {
             data: {

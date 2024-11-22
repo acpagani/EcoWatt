@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { login } from "../../../../api/auth";
 import Swal from "sweetalert2";
+import { getUserLogs } from "../../../../api/logs";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ export default function LoginForm() {
     e.preventDefault();
     Swal.showLoading();
     const response = await login(email, password);
-    
+
     if (response.data.length === 0) {
       Swal.close();
       Swal.fire({
@@ -18,11 +19,26 @@ export default function LoginForm() {
         title: "Erro!",
         text: "E-mail ou senha incorretos!",
       });
-      return
+      return;
     }
 
-    Swal.close();
-    localStorage.setItem("user", JSON.stringify(response.data[0]));
+    const user = response.data[0];
+    const responseLog = await getUserLogs(user.id);
+
+    if (responseLog.data.length > 0) {
+      const logContent = JSON.parse(responseLog.data[0].content);
+
+      let userUpdated = { ...user };
+
+      userUpdated.pontuation = logContent.points;
+      userUpdated.category = logContent.userCategory;
+
+      Swal.close();
+      localStorage.setItem("user", JSON.stringify(userUpdated));
+    } else {
+      Swal.close();
+      localStorage.setItem("user", JSON.stringify(user));
+    }
     window.location.replace("/service");
   };
 

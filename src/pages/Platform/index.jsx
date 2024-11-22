@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import GeneratingContentContext from "./context/GeneratingContentContext";
 import MetricInput from "./components/MetricInput";
 import CallGemini from "./backend/gemini/CallGemini";
-import { createNewSimulation } from "../../api/simulation";
+import { createNewSimulation, getSimulationData } from "../../api/simulation";
 import { getUserDataLS } from "../../api/userData";
 import { createNewLog } from "../../api/logs";
 import { BsStars } from "react-icons/bs";
@@ -35,19 +35,19 @@ export default function Plaftorm() {
 
     setGeneratingContent(true);
 
-    const responseGemini = await CallGemini(
-      JSON.stringify({
-        consumoTotal,
-        carbonoEmitido,
-        energiaRenovavel,
-        fontesEnergiaRenovavel,
-        reducaoPicoDemanda,
-      })
-    );
-
     const userData = getUserDataLS();
-    
+
     await createNewSimulation(userData.id, consumoTotal, carbonoEmitido, energiaRenovavel, fontesEnergiaRenovavel, reducaoPicoDemanda);
+
+    const getSimulationDataResponse = await getSimulationData(userData.id);
+
+    console.log(getSimulationDataResponse.data);
+    
+
+    const responseGemini = await CallGemini(
+      JSON.stringify(getSimulationDataResponse.data)
+    );
+  
     await createNewLog(userData.id, responseGemini);
 
     setGeneratingContent(false);
