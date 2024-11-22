@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { getSimulationData } from "../../../../api/simulation";
+import { getUserDataLS } from "../../../../api/userData";
 import OutletMain from "../../components/OutletMain";
 import ChartCard from "./components/ChartCard";
 import BarChart from "./components/Charts/Bar";
@@ -8,6 +11,15 @@ import { lineChartData } from "./components/Charts/data/FakeLineData";
 import { pieChartData } from "./components/Charts/data/FakePieData";
 
 export default function Dashboard() {
+
+  useEffect(() => {
+    const fetchSimulationData = async () => {
+      const response = await getSimulationData(2);
+      console.log(response);
+    };
+    fetchSimulationData();
+  }, []);
+  
 
   const fakeNumberSource = 5;
 

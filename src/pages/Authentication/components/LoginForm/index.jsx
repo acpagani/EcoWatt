@@ -22,7 +22,7 @@ export default function LoginForm() {
     }
 
     Swal.close();
-    localStorage.setItem("user", email);
+    localStorage.setItem("user", JSON.stringify(response.data[0]));
     window.location.replace("/service");
   };
 

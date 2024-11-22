@@ -10,8 +10,6 @@ export default function SigninForm() {
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
 
-  let auth = JSON.parse(localStorage.getItem("auth")) || [];
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     Swal.showLoading()
@@ -58,7 +56,7 @@ export default function SigninForm() {
         text: "Usuário cadastrado com sucesso!",
         confirmButtonText: "Ok",
       }).then(() => 
-        localStorage.setItem("user", JSON.stringify(email)),
+        localStorage.setItem("user", JSON.stringify(response.data[0])),
         window.location.replace("/service")
       );
     } catch (error) {
