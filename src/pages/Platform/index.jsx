@@ -59,6 +59,7 @@ export default function Plaftorm() {
     user.category = resultJson.userCategory;
     Swal.close()
     localStorage.setItem("user", JSON.stringify(user));
+    window.location.reload()
   };
 
   return (
