@@ -24,7 +24,7 @@ export default function Header({
 
   return (
     <header className="w-full bg-eGreen h-[10vh]">
-      <div className="container mx-auto px-10 sm:px-0 flex justify-between items-center h-full">
+      <div className="container mx-auto px-10 sm:px-0 lg:px-20 flex justify-between items-center h-full">
         <div
           className="flex items-center justify-center gap-10"
           style={{ width: isLP ? "auto" : "100%" }}

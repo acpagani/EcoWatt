@@ -11,7 +11,7 @@ const JoinUs = forwardRef(({}, ref) => {
           "url('https://www.transparenttextures.com/patterns/cubes.png')",
       }}
     >
-      <div className="container mx-auto px-10 py-10 sm:px-0 flex flex-col gap-10 items-center self-center">
+      <div className="container mx-auto px-10 py-10 sm:px-10 lg:px-20 flex flex-col gap-10 items-center self-center">
         <svg
           width="147"
           height="147"

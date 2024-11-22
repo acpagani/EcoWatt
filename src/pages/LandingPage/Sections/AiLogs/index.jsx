@@ -3,42 +3,31 @@ import { forwardRef } from "react";
 const AiLogs = forwardRef(({}, ref) => {
   return (
     <section ref={ref} className="w-full min-h-[70vh] bg-eGreen flex">
-      <div className="container mx-auto px-10 sm:px-0 flex flex-col gap-10">
+      <div className="container mx-auto px-10 lg:px-20 sm:px-10 flex flex-col gap-10">
         <div className="w-[50%] mx-auto flex gap-5 justify-center items-center">
           <div className="flex flex-col md:flex-row gap-5">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="65"
-              height="65"
-              viewBox="0 0 65 65"
+              className="size-20"
+              width="85"
+              height="90"
+              viewBox="0 0 94 94"
               fill="none"
-              className="h-16"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M65 32.5C65 65 65 65 32.5 65C14.5508 65 0 50.4493 0 32.5C0 0 0 0 32.5 0C50.4493 0 65 14.5507 65 32.5Z"
-                fill="url(#paint0_linear_21_31)"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M47 94C72.9574 94 94 72.9574 94 47C94 21.0426 72.9574 0 47 0C21.0426 0 0 21.0426 0 47C0 72.9574 21.0426 94 47 94ZM47 74.26C62.0553 74.26 74.26 62.0553 74.26 47C74.26 31.9447 62.0553 19.74 47 19.74C31.9447 19.74 19.74 31.9447 19.74 47C19.74 62.0553 31.9447 74.26 47 74.26Z"
+                fill="white"
               />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_21_31"
-                  x1="65"
-                  y1="65"
-                  x2="-11.5"
-                  y2="1.70915e-06"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#9D9D9D" />
-                  <stop offset="1" stopColor="white" />
-                </linearGradient>
-              </defs>
             </svg>
             <svg
+              className="size-20"
               width="85"
               height="90"
               viewBox="0 0 85 90"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-16"
             >
               <path
                 d="M38.8305 1.96477C40.8096 -0.173543 44.1904 -0.173545 46.1695 1.96477L82.8567 41.6037C84.6306 43.5204 84.6306 46.4796 82.8567 48.3963L46.1695 88.0352C44.1904 90.1735 40.8096 90.1735 38.8305 88.0352L2.14335 48.3963C0.369382 46.4796 0.369381 43.5204 2.14335 41.6037L38.8305 1.96477Z"
@@ -46,12 +35,12 @@ const AiLogs = forwardRef(({}, ref) => {
               />
             </svg>
             <svg
+              className="size-20"
               width="65"
               height="65"
               viewBox="0 0 65 65"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-16"
             >
               <path
                 d="M65 32.5C65 65 65 65 32.5 65C14.5508 65 0 50.4493 0 32.5C0 0 0 0 32.5 0C50.4493 0 65 14.5507 65 32.5Z"
@@ -61,51 +50,39 @@ const AiLogs = forwardRef(({}, ref) => {
           </div>
           <div className="flex flex-col md:flex-row gap-5">
             <svg
-              width="80"
-              height="70"
-              viewBox="0 0 80 70"
+              className="size-20"
+              width="95"
+              height="95"
+              viewBox="0 0 95 95"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-16"
             >
               <path
-                d="M35.9711 2.5C37.8956 -0.833332 42.7069 -0.833334 44.6314 2.5L79.2724 62.5C81.1969 65.8333 78.7913 70 74.9423 70H5.66026C1.81125 70 -0.594374 65.8333 1.33013 62.5L35.9711 2.5Z"
+                d="M0 47.1296C0 47.1296 21.7111 41.1096 31.4104 31.4104C41.1096 21.7111 47.1296 -8.58747e-07 47.1296 -8.58747e-07C47.1296 -8.58747e-07 53.1284 21.7111 62.8208 31.4104C72.5235 41.12 94.2592 47.1296 94.2592 47.1296C94.2592 47.1296 72.5235 53.118 62.8208 62.8207C53.118 72.5235 47.1296 94.2592 47.1296 94.2592C47.1296 94.2592 41.12 72.5235 31.4104 62.8207C21.7111 53.1284 0 47.1296 0 47.1296Z"
                 fill="white"
               />
             </svg>
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="65"
-              height="65"
-              viewBox="0 0 65 65"
+              className="size-20"
+              width="69"
+              height="90"
+              viewBox="0 0 69 90"
               fill="none"
-              className="h-16"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M65 32.5C65 65 65 65 32.5 65C14.5508 65 0 50.4493 0 32.5C0 0 0 0 32.5 0C50.4493 0 65 14.5507 65 32.5Z"
-                fill="url(#paint0_linear_21_31)"
+                d="M67.9801 4.61036C69.5034 2.77787 68.2002 0 65.8173 0L2.99519 0C0.612269 0 -0.690896 2.77787 0.832361 4.61036L67.9801 85.3896C69.5034 87.2221 68.2002 90 65.8173 90H2.99519C0.612269 90 -0.690896 87.2221 0.832361 85.3896L67.9801 4.61036Z"
+                fill="white"
               />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_21_31"
-                  x1="65"
-                  y1="65"
-                  x2="-11.5"
-                  y2="1.70915e-06"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#9D9D9D" />
-                  <stop offset="1" stopColor="white" />
-                </linearGradient>
-              </defs>
             </svg>
+
             <svg
+              className="size-20"
               width="85"
               height="90"
               viewBox="0 0 85 90"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-16"
             >
               <path
                 d="M38.8305 1.96477C40.8096 -0.173543 44.1904 -0.173545 46.1695 1.96477L82.8567 41.6037C84.6306 43.5204 84.6306 46.4796 82.8567 48.3963L46.1695 88.0352C44.1904 90.1735 40.8096 90.1735 38.8305 88.0352L2.14335 48.3963C0.369382 46.4796 0.369381 43.5204 2.14335 41.6037L38.8305 1.96477Z"
@@ -114,7 +91,7 @@ const AiLogs = forwardRef(({}, ref) => {
             </svg>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-10 justify-center items-center pt-20">
+        <div className="flex flex-col md:flex-row gap-10 justify-between items-center pt-20">
           <div className="flex flex-col gap-5">
             <h2 className="text-4xl text-eWhite font-bold">
               Análise de Dados com IA
@@ -132,12 +109,14 @@ const AiLogs = forwardRef(({}, ref) => {
             </p>
           </div>
           <svg
-            viewBox="0 0 65 65"
+            className="fill-eDarkBlue size-52 lg:mr-20"
+            width="95"
+            height="95"
+            viewBox="0 0 95 95"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="fill-eDarkBlue size-36"
           >
-            <path d="M65 32.5C65 65 65 65 32.5 65C14.5508 65 0 50.4493 0 32.5C0 0 0 0 32.5 0C50.4493 0 65 14.5507 65 32.5Z" />
+            <path d="M0 47.1296C0 47.1296 21.7111 41.1096 31.4104 31.4104C41.1096 21.7111 47.1296 -8.58747e-07 47.1296 -8.58747e-07C47.1296 -8.58747e-07 53.1284 21.7111 62.8208 31.4104C72.5235 41.12 94.2592 47.1296 94.2592 47.1296C94.2592 47.1296 72.5235 53.118 62.8208 62.8207C53.118 72.5235 47.1296 94.2592 47.1296 94.2592C47.1296 94.2592 41.12 72.5235 31.4104 62.8207C21.7111 53.1284 0 47.1296 0 47.1296Z" />
           </svg>
         </div>
       </div>

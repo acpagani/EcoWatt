@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 const WhyUs = forwardRef(({}, ref) => {
   return (
     <section ref={ref} className="w-full min-h-[60vh] bg-eGreen">
-      <div className="container mx-auto px-10 sm:px-0 py-20 relative z-0">
+      <div className="container mx-auto px-10 lg:px-20 py-20 relative z-0">
         <h2 className="text-4xl text-eWhite">Por que escolher a EcoWatt?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
           <div className="flex flex-col md:items-center gap-5">
@@ -32,7 +32,7 @@ const WhyUs = forwardRef(({}, ref) => {
           height="65"
           viewBox="0 0 65 65"
           fill="none"
-          className="absolute top-14 left-4 sm:top-12 sm:-left-8 -z-10"
+          className="absolute top-14 left-4 sm:top-12 sm:left-5 lg:left-10 -z-10"
         >
           <path
             d="M65 32.5C65 65 65 65 32.5 65C14.5508 65 0 50.4493 0 32.5C0 0 0 0 32.5 0C50.4493 0 65 14.5507 65 32.5Z"
