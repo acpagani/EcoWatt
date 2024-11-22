@@ -1,28 +1,29 @@
 import { useState } from "react";
+import { login } from "../../../../api/auth";
+import Swal from "sweetalert2";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  let auth = JSON.parse(localStorage.getItem("auth")) || [];
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    let isValid = false;
-    auth.forEach((user) => {
-      if (user.email === email && user.password === password) {
-        isValid = true;
-      }
-    });
-
-    if (isValid) {
-        alert("Login realizado com sucesso! Seja bem-vindo!");
-        window.location.replace("/service");
+    Swal.showLoading();
+    const response = await login(email, password);
+    
+    if (response.data.length === 0) {
+      Swal.close();
+      Swal.fire({
+        icon: "error",
+        title: "Erro!",
+        text: "E-mail ou senha incorretos!",
+      });
+      return
     }
-    else {
-        alert("Dados incorretos, tente novamente.")
-    }
+
+    Swal.close();
+    localStorage.setItem("user", JSON.stringify(response.data[0]));
+    window.location.replace("/service");
   };
 
   return (

@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import GeneratingContentContext from "./context/GeneratingContentContext";
 import MetricInput from "./components/MetricInput";
 import CallGemini from "./backend/gemini/CallGemini";
+import { createNewSimulation } from "../../api/simulation";
+import { getUserDataLS } from "../../api/userData";
+import { createNewLog } from "../../api/logs";
 import { BsStars } from "react-icons/bs";
 import SettingsModal from "./components/Sidebar/components/SettingsModal";
 
@@ -35,7 +38,7 @@ export default function Plaftorm() {
 
     setGeneratingContent(true);
 
-    const result = await CallGemini(
+    const responseGemini = await CallGemini(
       JSON.stringify({
         consumoTotal,
         carbonoEmitido,
@@ -45,13 +48,21 @@ export default function Plaftorm() {
       })
     );
 
-    setGeneratingContent(false);
-    console.log(result);
+    const userData = getUserDataLS();
     
-    const resultJson = JSON.parse(result);
-    user.points = resultJson.points;
+    await createNewSimulation(userData.id, consumoTotal, carbonoEmitido, energiaRenovavel, fontesEnergiaRenovavel, reducaoPicoDemanda);
+    await createNewLog(userData.id, responseGemini);
+
+    setGeneratingContent(false);
+    console.log(responseGemini);
+
+    const resultJson = JSON.parse(responseGemini);
+    let user = getUserDataLS();
+
+    user.pontuation = resultJson.points;
     user.category = resultJson.userCategory;
-    localStorage.setItem("auth", JSON.stringify([user]));
+
+    localStorage.setItem("user", JSON.stringify(user));
   };
 
   return (
