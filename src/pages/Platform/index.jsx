@@ -39,10 +39,7 @@ export default function Plaftorm() {
 
     await createNewSimulation(userData.id, consumoTotal, carbonoEmitido, energiaRenovavel, fontesEnergiaRenovavel, reducaoPicoDemanda);
 
-    const getSimulationDataResponse = await getSimulationData(userData.id);
-
-    console.log(getSimulationDataResponse.data);
-    
+    const getSimulationDataResponse = await getSimulationData(userData.id);    
 
     const responseGemini = await CallGemini(
       JSON.stringify(getSimulationDataResponse.data)

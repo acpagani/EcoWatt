@@ -14,8 +14,8 @@ const Tokenization = forwardRef(({}, ref) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M47 94C72.9574 94 94 72.9574 94 47C94 21.0426 72.9574 0 47 0C21.0426 0 0 21.0426 0 47C0 72.9574 21.0426 94 47 94ZM47 74.26C62.0553 74.26 74.26 62.0553 74.26 47C74.26 31.9447 62.0553 19.74 47 19.74C31.9447 19.74 19.74 31.9447 19.74 47C19.74 62.0553 31.9447 74.26 47 74.26Z"
             />
           </svg>

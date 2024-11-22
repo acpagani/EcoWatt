@@ -14,10 +14,7 @@ export default function Header({
   refAiLogs,
   refTokenization,
   isLP = false,
-}) {
-
-  console.log(refAiLogs);
-  
+}) {  
   const goToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
