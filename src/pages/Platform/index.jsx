@@ -9,6 +9,7 @@ import { getUserDataLS } from "../../api/userData";
 import { createNewLog } from "../../api/logs";
 import { BsStars } from "react-icons/bs";
 import SettingsModal from "./components/Sidebar/components/SettingsModal";
+import Swal from "sweetalert2";
 
 export default function Plaftorm() {
   const [active, setActive] = useState(false);
@@ -27,6 +28,7 @@ export default function Plaftorm() {
   const [generatingContent, setGeneratingContent] = useState(false);
 
   const handleSubmit = async () => {
+    Swal.showLoading()
     setCarbonoEmitido(0);
     setConsumoTotal(0);
     setEnergiaRenovavel(0);
@@ -44,7 +46,7 @@ export default function Plaftorm() {
     const responseGemini = await CallGemini(
       JSON.stringify(getSimulationDataResponse.data)
     );
-  
+    
     await createNewLog(userData.id, responseGemini);
 
     setGeneratingContent(false);
@@ -55,7 +57,7 @@ export default function Plaftorm() {
 
     user.pontuation = resultJson.points;
     user.category = resultJson.userCategory;
-
+    Swal.close()
     localStorage.setItem("user", JSON.stringify(user));
   };
 
