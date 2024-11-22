@@ -66,7 +66,7 @@ export default function Dashboard() {
                 <div className="flex flex-col gap-2 h-full items-center justify-center">
                   <div className="stat text-center">
                     <div className="stat-value text-7xl">
-                      {renewableEnergySource}
+                      {renewableEnergySource || 0}
                     </div>
                   </div>
                 </div>

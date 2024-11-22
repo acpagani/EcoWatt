@@ -11,6 +11,7 @@ export default function Header({
   refRevolution,
   refWhyUs,
   refJoinUs,
+  refAiLogs,
   refTokenization,
   isLP = false,
 }) {
@@ -50,6 +51,12 @@ export default function Header({
                 onClick={() => goToSection(refWhyUs)}
               >
                 Por que nós?
+              </button>
+              <button
+                className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
+                onClick={() => goToSection(refAiLogs)}
+              >
+                IA
               </button>
               <button
                 className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
@@ -102,12 +109,21 @@ export default function Header({
                     tabIndex={-1}
                     className="hover:bg-gray-700 focus:bg-gray-700"
                   >
+                    <Link onClick={() => goToSection(refAiLogs)} className="text-white hover:text-gray-300">
+                      IA
+                    </Link>
+                  </DropdownItem>
+                  <DropdownItem
+                    key="copy3"
+                    tabIndex={-1}
+                    className="hover:bg-gray-700 focus:bg-gray-700"
+                  >
                     <Link onClick={() => goToSection(refTokenization)} className="text-white hover:text-gray-300">
                       Tokenização
                     </Link>
                   </DropdownItem>
                   <DropdownItem
-                    key="copy3"
+                    key="copy4"
                     tabIndex={-1}
                     className="hover:bg-gray-700 focus:bg-gray-700"
                   >
@@ -116,7 +132,7 @@ export default function Header({
                     </Link>
                   </DropdownItem>
                   <DropdownItem
-                    key="copy4"
+                    key="copy5"
                     tabIndex={-1}
                     className="hover:bg-gray-700 focus:bg-gray-700"
                   >

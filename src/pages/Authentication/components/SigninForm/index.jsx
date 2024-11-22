@@ -21,14 +21,6 @@ export default function SigninForm() {
       });
       return;
     }
-    const user = {
-      name,
-      email,
-      phone,
-      password,
-      points: 0,
-      category: "Indefinido: Faça sua primeira simulação",
-    };
     try {
       const emailExistsResponse = await emailExists(email);
       if (emailExistsResponse) {
@@ -42,6 +34,8 @@ export default function SigninForm() {
       const response = await signup(email, name, password, phone);
       
       if (response?.error) {
+        console.log(response.error);
+        
         Swal.close();
         Swal.fire({
           icon: "error",
@@ -57,8 +51,9 @@ export default function SigninForm() {
         text: "Usuário cadastrado com sucesso!",
         confirmButtonText: "Ok",
       }).then(() => 
-        localStorage.setItem("user", JSON.stringify(response.data[0])),
+        localStorage.setItem("user", JSON.stringify(response.data)),
         window.location.replace("/service")
+        
       );
     } catch (error) {
       console.error("Erro durante o cadastro:", error);

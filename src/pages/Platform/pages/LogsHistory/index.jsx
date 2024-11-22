@@ -36,10 +36,18 @@ export default function LogsHistory() {
             <l-ring size="60" speed="1.5" color="#10D48E"></l-ring>
           </div>
         ) : (
-            retrievedLogs
+          retrievedLogs.length > 0 ?
+            (retrievedLogs
             .map((log) => (
               <LogCard key={log.id} {...log}/>
-            ))
+            )))
+            :
+            (
+              <div className="h-full w-full flex flex-col gap-10 items-center justify-center">
+                <p className="text-xl text-eDarkBlue font-semibold">Nenhum log encontrado</p>
+                <p className="text-xl text-eDarkBlue text-center">Experimente clicar no botão "Nova Simulação" e obtenha seu primeiro relatório!</p>
+              </div>
+            )
         ) }
       </div>
     </OutletMain>
