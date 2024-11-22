@@ -27,14 +27,13 @@ export default function Dashboard() {
   }, []);
 
   const totalUse = simulationData.map((item) => parseInt(item.totalUse));
-  console.log(totalUse);
   
   const carbonEmitted = simulationData.map((item) =>
     parseInt(item.carbonEmitted)
   );
-  const renewableEnergy = parseInt(simulationData[0]?.renewableEnergy);
+  const renewableEnergy = parseInt(simulationData[simulationData.length - 1]?.renewableEnergy);
   const renewableEnergySource = parseInt(
-    simulationData[0]?.renewableEnergySource
+    simulationData[simulationData.length - 1]?.renewableEnergySource
   );
   const peakDemandReduction = simulationData.map((item) =>
     parseInt(item.peakDemandReduction)

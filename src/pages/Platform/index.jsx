@@ -14,9 +14,6 @@ export default function Plaftorm() {
   const [active, setActive] = useState(false);
   const { pathname } = useLocation();
 
-  const auth = localStorage.getItem("auth");
-  const user = JSON.parse(auth)[0];
-
   useEffect(() => {
     setActive(false);
   }, [pathname]);

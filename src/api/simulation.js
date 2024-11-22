@@ -2,7 +2,7 @@ import api from "./config";
 
 export const getSimulationData = async (company) => {
     try {
-        const response = await api.get(`/simulations?filters[company][$eq]=${company}&sort[createdAt]=desc`)
+        const response = await api.get(`/simulations?filters[company][$eq]=${company}`)
         
         return response.data;
     } catch (error) {

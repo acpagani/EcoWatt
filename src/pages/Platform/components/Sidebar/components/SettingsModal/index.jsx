@@ -1,11 +1,12 @@
+import { getUserDataLS } from "../../../../../../api/userData";
+
 export default function SettingsModal() {
-  const auth = localStorage.getItem("auth");
-  const user = JSON.parse(auth)[0];
+  const user = getUserDataLS();
 
   const handleClick = () => {
     const confirmMessage = window.confirm("Deseja realmente sair?");
     if (!confirmMessage) return;
-    localStorage.removeItem("auth");
+    localStorage.removeItem("user");
     window.location.assign("/");
   };
 
@@ -40,7 +41,7 @@ export default function SettingsModal() {
           <div className="flex flex-col gap-5 sm:gap-10">
             <div className="flex flex-col sm:items-center">
               <span className="font-medium">Pontuação</span>
-              <span className="text-7xl">{user.points}</span>
+              <span className="text-7xl">{user.pontuation}</span>
             </div>
             <div className="flex flex-col sm:items-center">
               <span className="font-medium">Categoria</span>
