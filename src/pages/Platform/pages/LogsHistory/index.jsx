@@ -41,7 +41,6 @@ export default function LogsHistory() {
               <LogCard key={log.id} {...log}/>
             ))
         ) }
-        
       </div>
     </OutletMain>
   );

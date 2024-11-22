@@ -27,7 +27,7 @@ const Hero = forwardRef(({ refNext }, ref) => {
               Comece agora
             </Link>
           </div>
-          <video src="/assets/video/heroVideo.mp4" className="max-md:w-3/4" autoPlay muted width={"300px"} height={"400px"} style={{
+          <video src="/assets/video/heroVideo.mp4" className="max-md:w-3/4" autoPlay muted loop width={"300px"} height={"400px"} style={{
             borderRadius: "20px",
           }}>
 

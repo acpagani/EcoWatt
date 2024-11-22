@@ -7,10 +7,15 @@ import CallGemini from "./backend/gemini/CallGemini";
 import { createNewSimulation } from "../../api/simulation";
 import { getUserDataLS } from "../../api/userData";
 import { createNewLog } from "../../api/logs";
+import { BsStars } from "react-icons/bs";
+import SettingsModal from "./components/Sidebar/components/SettingsModal";
 
 export default function Plaftorm() {
   const [active, setActive] = useState(false);
   const { pathname } = useLocation();
+
+  const auth = localStorage.getItem("auth");
+  const user = JSON.parse(auth)[0];
 
   useEffect(() => {
     setActive(false);
@@ -58,7 +63,6 @@ export default function Plaftorm() {
     user.category = resultJson.userCategory;
 
     localStorage.setItem("user", JSON.stringify(user));
-    
   };
 
   return (
@@ -134,14 +138,16 @@ export default function Plaftorm() {
               </div>
               <button
                 type="submit"
-                className="btn bg-eDarkBlue text-eWhite hover:text-eDarkBlue"
+                className="btn bg-eDarkBlue text-eWhite hover:text-eDarkBlue flex items-center justify-center gap-2"
               >
                 Submit
+                <BsStars className="size-5" />
               </button>
             </form>
           </div>
         </div>
       </dialog>
+      <SettingsModal />
     </GeneratingContentContext.Provider>
   );
 }

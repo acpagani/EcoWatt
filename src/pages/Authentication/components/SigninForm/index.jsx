@@ -27,6 +27,7 @@ export default function SigninForm() {
       phone,
       password,
       points: 0,
+      category: "Indefinido: Faça sua primeira simulação",
     };
     try {
       const emailExistsResponse = await emailExists(email);

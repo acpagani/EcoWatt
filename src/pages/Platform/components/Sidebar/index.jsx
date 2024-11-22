@@ -5,13 +5,14 @@ import { IoIosClose } from "react-icons/io";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { useContext } from "react";
 import GeneratingContentContext from "../../context/GeneratingContentContext";
+import { IoSettingsSharp } from "react-icons/io5";
 
 export default function Sidebar({ onClick }) {
   const generatingContent = useContext(GeneratingContentContext);
 
   return (
     <aside className=" lg:w-[20vw] h-full flex flex-col items-start gap-10 py-10 px-5  xl:px-14 border-r-2 bg-eWhite">
-      <div className="flex gap-4 justify-between w-full">
+    <div className="flex gap-4 justify-between w-full">
         <button onClick={onClick} className="block sm:hidden">
           <IoIosClose className="size-10" />
         </button>
@@ -50,7 +51,11 @@ export default function Sidebar({ onClick }) {
             />
           </li>
         </ul>
-        <button>Configurações</button>
+        <button className="flex gap-2 items-center group hover:bg-eGray/10 w-full px-3 py-2 rounded-lg transition-all duration-300" onClick={() =>
+            document.getElementById("settings-modal").showModal()
+          }>
+            <IoSettingsSharp className="size-5 group-hover:rotate-180 transition-all duration-300"/>
+            Configurações</button>
       </nav>
       <button
         className="block sm:hidden absolute -right-20 bottom-10 p-3 bg-eWhite rounded-full drop-shadow-md"

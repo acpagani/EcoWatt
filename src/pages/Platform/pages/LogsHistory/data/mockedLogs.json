@@ -19,5 +19,12 @@
     "points": 70,
     "userCategory": "Eficiente em Evolução",
     "date": "2021-07-01"
+  },
+  {
+    "id": 4,
+    "efficiencyLog": "Relatório de desempenho energético para a sua empresa:\n\nPontuação geral: 50/140\n\nClassificação: Iniciante Sustentável\n\n**Consumo de Energia:**\n* Redução de 5% no consumo de energia.\n\n**Energia Renovável:**\n* Atualmente, 20% do consumo provém de fontes renováveis.\n* Uso de 1 fonte renovável.\n\n**Pico de Demanda:**\n* Redução de 5% no pico de demanda.\n\n**Emissões de Carbono:**\n* Redução de 5% nas emissões.\n\n**Engajamento:**\n* Treinamentos realizados: 1 (2 pontos).\n\n**Recomendações:**\n* **Aumentar uso de fontes renováveis:** Buscar atingir 30% ou mais no consumo de fontes renováveis.\n* **Implementar tecnologia:** Considerar a implementação de sistemas de monitoramento.\n* **Expandir engajamento:** Realizar mais treinamentos para maximizar os pontos nesta categoria.\n\nEste relatório destaca o progresso inicial da sua empresa em direção à sustentabilidade.",
+    "points": 50,
+    "userCategory": "Iniciante Sustentável",
+    "date": "2021-06-01"
   }
 ]
