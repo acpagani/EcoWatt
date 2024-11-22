@@ -6,11 +6,11 @@ export default function Leaderboard() {
 
   const companies = [...mockedCompanies]
 
-  const user = JSON.parse(localStorage.getItem("auth"))[0] || []
+  const user = JSON.parse(localStorage.getItem("user")) || {}
 
   const newCompanie = {
     name: user.name,
-    points: user.points,
+    points: user.pontuation,
     category: user.category,
     isUser: true
   }

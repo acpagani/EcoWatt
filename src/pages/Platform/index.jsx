@@ -4,15 +4,15 @@ import { useEffect, useState } from "react";
 import GeneratingContentContext from "./context/GeneratingContentContext";
 import MetricInput from "./components/MetricInput";
 import CallGemini from "./backend/gemini/CallGemini";
+import { createNewSimulation, getSimulationData } from "../../api/simulation";
+import { getUserDataLS } from "../../api/userData";
+import { createNewLog } from "../../api/logs";
 import { BsStars } from "react-icons/bs";
 import SettingsModal from "./components/Sidebar/components/SettingsModal";
 
 export default function Plaftorm() {
   const [active, setActive] = useState(false);
   const { pathname } = useLocation();
-
-  const auth = localStorage.getItem("auth");
-  const user = JSON.parse(auth)[0];
 
   useEffect(() => {
     setActive(false);
@@ -35,23 +35,31 @@ export default function Plaftorm() {
 
     setGeneratingContent(true);
 
-    const result = await CallGemini(
-      JSON.stringify({
-        consumoTotal,
-        carbonoEmitido,
-        energiaRenovavel,
-        fontesEnergiaRenovavel,
-        reducaoPicoDemanda,
-      })
+    const userData = getUserDataLS();
+
+    await createNewSimulation(userData.id, consumoTotal, carbonoEmitido, energiaRenovavel, fontesEnergiaRenovavel, reducaoPicoDemanda);
+
+    const getSimulationDataResponse = await getSimulationData(userData.id);
+
+    console.log(getSimulationDataResponse.data);
+    
+
+    const responseGemini = await CallGemini(
+      JSON.stringify(getSimulationDataResponse.data)
     );
+  
+    await createNewLog(userData.id, responseGemini);
 
     setGeneratingContent(false);
-    console.log(result);
-    
-    const resultJson = JSON.parse(result);
-    user.points = resultJson.points;
+    console.log(responseGemini);
+
+    const resultJson = JSON.parse(responseGemini);
+    let user = getUserDataLS();
+
+    user.pontuation = resultJson.points;
     user.category = resultJson.userCategory;
-    localStorage.setItem("auth", JSON.stringify([user]));
+
+    localStorage.setItem("user", JSON.stringify(user));
   };
 
   return (

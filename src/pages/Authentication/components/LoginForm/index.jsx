@@ -1,28 +1,45 @@
 import { useState } from "react";
+import { login } from "../../../../api/auth";
+import Swal from "sweetalert2";
+import { getUserLogs } from "../../../../api/logs";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  let auth = JSON.parse(localStorage.getItem("auth")) || [];
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    Swal.showLoading();
+    const response = await login(email, password);
 
-    let isValid = false;
-    auth.forEach((user) => {
-      if (user.email === email && user.password === password) {
-        isValid = true;
-      }
-    });
+    if (response.data.length === 0) {
+      Swal.close();
+      Swal.fire({
+        icon: "error",
+        title: "Erro!",
+        text: "E-mail ou senha incorretos!",
+      });
+      return;
+    }
 
-    if (isValid) {
-        alert("Login realizado com sucesso! Seja bem-vindo!");
-        window.location.replace("/service");
+    const user = response.data[0];
+    const responseLog = await getUserLogs(user.id);
+
+    if (responseLog.data.length > 0) {
+      const logContent = JSON.parse(responseLog.data[0].content);
+
+      let userUpdated = { ...user };
+
+      userUpdated.pontuation = logContent.points;
+      userUpdated.category = logContent.userCategory;
+
+      Swal.close();
+      localStorage.setItem("user", JSON.stringify(userUpdated));
+    } else {
+      Swal.close();
+      localStorage.setItem("user", JSON.stringify(user));
     }
-    else {
-        alert("Dados incorretos, tente novamente.")
-    }
+    window.location.replace("/service");
   };
 
   return (

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { PatternFormat } from "react-number-format";
+import { signup, emailExists } from "../../../../api/auth";
+import Swal from 'sweetalert2'
 
 export default function SigninForm() {
   const [name, setName] = useState("");
@@ -8,35 +10,60 @@ export default function SigninForm() {
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
 
-  let auth = JSON.parse(localStorage.getItem("auth")) || [];
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+    Swal.showLoading()
     if (password !== passwordConfirm) {
-      alert("As senhas não coincidem");
+      Swal.fire({
+        icon: "error",
+        title: "Erro!",
+        text: "As senhas não coincidem!",
+      });
       return;
     }
-    let alreadyExists = false;
-    auth.forEach((user) => {
-      if (user.email === email) {
-        alert("E-mail já cadastrado");
-        alreadyExists = true;
+    try {
+      const emailExistsResponse = await emailExists(email);
+      if (emailExistsResponse) {
+        Swal.fire({
+          icon: "error",
+          title: "Erro!",
+          text: "E-mail já cadastrado!",
+        });
+        return
       }
-    });
-    if (alreadyExists) return;
-    const user = {
-      name,
-      email,
-      phone,
-      password,
-      points: 0,
-      category: "Indefinido: Faça sua primeira simulação",
-    };
-    auth.push(user);
-    localStorage.setItem("auth", JSON.stringify(auth));
-    alert("Cadastro realizado com sucesso!");
-    window.location.replace("/service");
+      const response = await signup(email, name, password, phone);
+      
+      if (response?.error) {
+        console.log(response.error);
+        
+        Swal.close();
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Algo deu errado ao realizar o cadastro!",
+        });
+        return;
+      }
+      Swal.close();
+      Swal.fire({
+        icon: "success",
+        title: "Cadastro realizado com sucesso!",
+        text: "Usuário cadastrado com sucesso!",
+        confirmButtonText: "Ok",
+      }).then(() => 
+        localStorage.setItem("user", JSON.stringify(response.data)),
+        window.location.replace("/service")
+        
+      );
+    } catch (error) {
+      console.error("Erro durante o cadastro:", error);
+      Swal.close();
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Algo deu errado ao realizar o cadastro!",
+      });
+    }
   };
 
   return (
