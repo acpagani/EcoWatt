@@ -45,12 +45,19 @@ export default function Plaftorm() {
 
     const userData = getUserDataLS();
     
-    const responseSimulation = await createNewSimulation(userData.id, consumoTotal, carbonoEmitido, energiaRenovavel, fontesEnergiaRenovavel, reducaoPicoDemanda);
-    const responseLog = await createNewLog(userData.id, responseGemini);
+    await createNewSimulation(userData.id, consumoTotal, carbonoEmitido, energiaRenovavel, fontesEnergiaRenovavel, reducaoPicoDemanda);
+    await createNewLog(userData.id, responseGemini);
 
     setGeneratingContent(false);
-    console.log(responseLog);
     console.log(responseGemini);
+
+    const resultJson = JSON.parse(responseGemini);
+    let user = getUserDataLS();
+
+    user.pontuation = resultJson.points;
+    user.category = resultJson.userCategory;
+
+    localStorage.setItem("user", JSON.stringify(user));
     
   };
 
