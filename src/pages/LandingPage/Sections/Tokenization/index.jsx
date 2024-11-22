@@ -3,15 +3,13 @@ import { forwardRef } from "react";
 const Tokenization = forwardRef(({}, ref) => {
   return (
     <section ref={ref} className="w-full min-h-[70vh] bg-eGreen flex">
-      <div className="container px-20 mx-auto flex flex-col gap-10">
-        <div className="flex justify-between items-center pt-20">
+      <div className="container mx-auto px-10 sm:px-0 pb-10 flex flex-col gap-10">
+        <div className="flex justify-center gap-10 items-center pt-20">
           <svg
-            width="65"
-            height="65"
             viewBox="0 0 65 65"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="fill-eDarkBlue w-72 h-60"
+            className="fill-eDarkBlue size-36 hidden md:block"
           >
             <path d="M65 32.5C65 65 65 65 32.5 65C14.5508 65 0 50.4493 0 32.5C0 0 0 0 32.5 0C50.4493 0 65 14.5507 65 32.5Z" />
           </svg>

@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 const Revolution = forwardRef(({}, ref) => {
   return (
     <section ref={ref} className="w-full min-h-[40vh] bg-eDarkBlue">
-      <div className="container mx-auto px-20 flex flex-col md:flex-row gap-10 md:gap-32 py-20 items-center">
+      <div className="container mx-auto px-10 sm:px-0 flex flex-col md:flex-row gap-10 md:gap-32 py-20 items-center">
         <div className="flex flex-col gap-5">
           <h2 className="text-4xl text-eWhite">Transforme a sua indústria</h2>
           <p className="text-xl text-eWhite">

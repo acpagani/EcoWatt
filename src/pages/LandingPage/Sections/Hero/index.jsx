@@ -16,10 +16,10 @@ const Hero = forwardRef(({ refNext }, ref) => {
           "url('https://www.transparenttextures.com/patterns/cubes.png')",
       }}
     >
-      <div className="container mx-auto px-20 flex flex-col h-full justify-between pb-10 max-md:w-full max-md:px-10 max-md:py-10">
+      <div className="container mx-auto px-10 sm:px-0 flex flex-col h-full justify-between pb-10 max-md:w-full max-md:px-10 max-md:py-10">
         <div className="flex items-center flex-1 justify-evenly container max-md:flex-col max-md:gap-5">
-          <div className="flex flex-col justify-center items-start ">
-            <h1 className="text-7xl font-bold text-eGray max-md:text-center max-sm:text-6xl">EcoWatt</h1>
+          <div className="flex flex-col justify-center items-center sm:items-start">
+            <h1 className="text-7xl font-bold text-eGray max-sm:text-5xl">EcoWatt</h1>
             <p className="text-xl text-eGray max-md:text-center">
               O futuro da energia nas indústrias
             </p>

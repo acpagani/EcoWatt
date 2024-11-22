@@ -11,7 +11,7 @@ const JoinUs = forwardRef(({}, ref) => {
           "url('https://www.transparenttextures.com/patterns/cubes.png')",
       }}
     >
-      <div className="container mx-auto flex flex-col gap-10 items-center self-center">
+      <div className="container mx-auto px-10 py-10 sm:px-0 flex flex-col gap-10 items-center self-center">
         <svg
           width="147"
           height="147"
@@ -40,8 +40,8 @@ const JoinUs = forwardRef(({}, ref) => {
           </defs>
         </svg>
 
-        <div className="flex flex-col gap-8 items-center max-md:px-10">
-          <h2 className="text-4xl text-eGray">Junte-se a nós</h2>
+        <div className="flex flex-col gap-8 items-center ">
+          <h2 className="text-4xl text-eGray max-sm:text-center">Junte-se a nós</h2>
           <p className="text-xl text-eGray max-w-[30rem]">
             Ama o som da EcoWatt? Nós achamos que sim! <span className="font-bold">Clique abaixo</span> e faça a
             mudança <span className="font-bold">hoje</span>. Você não estará apenas se juntando a uma revolução

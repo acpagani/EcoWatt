@@ -15,21 +15,22 @@ export default function Header({
   refTokenization,
   isLP = false,
 }) {
+
+  console.log(refAiLogs);
+  
   const goToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <header className="w-full bg-eGreen h-[10vh]">
-      <div className="container px-20 mx-auto flex justify-between">
+      <div className="container mx-auto px-10 sm:px-0 flex justify-between items-center h-full">
         <div
-          className="flex items-center justify-center"
+          className="flex items-center justify-center gap-10"
           style={{ width: isLP ? "auto" : "100%" }}
         >
           <svg
-            className="fill-eWhite w-32 h-20"
-            width="103"
-            height="26"
+            className="fill-eWhite w-32 h-full"
             viewBox="0 0 103 26"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -39,7 +40,7 @@ export default function Header({
         </div>
         {isLP && (
           <div className="flex items-center">
-            <nav className="hidden md:flex items-center gap-10">
+            <nav className="hidden md:flex items-center gap-5 lg:gap-10">
               <button
                 className="text-base text-eWhite font-bold hover:text-eGray transition-colors duration-300"
                 onClick={() => goToSection(refRevolution)}
@@ -78,73 +79,89 @@ export default function Header({
               </Link>
             </nav>
 
-            <div className="md:hidden flex justify-center"> 
+            <div className="md:hidden flex justify-center">
               <Dropdown>
                 <DropdownTrigger>
-                  <Button isIconOnly>
+                  <Button>
                     <img src="/assets/svg/menu/menu.svg" alt="Menu" />
                   </Button>
                 </DropdownTrigger>
-                <DropdownMenu aria-label="Static Actions" className="bg-eGray border border-white rounded-md">
+                <DropdownMenu
+                  aria-label="Static Actions"
+                  className="bg-eGray border border-white rounded-lg p-2"
+                >
                   <DropdownItem
-                    key="new"
+                    key="revolution"
                     tabIndex={-1}
-                    className="hover:bg-gray-700 focus:bg-gray-700"
+                    className="hover:bg-gray-700 focus:bg-gray-700 rounded-md"
                   >
-                    <Link onClick={() => goToSection(refRevolution)} className="text-white hover:text-gray-300">
+                    <button
+                      onClick={() => goToSection(refRevolution)}
+                      className="text-white hover:text-gray-300 p-2 text-start"
+                    >
                       A Revolução
-                    </Link>
+                    </button>
                   </DropdownItem>
                   <DropdownItem
-                    key="copy1"
+                    key="whyUs"
                     tabIndex={-1}
-                    className="hover:bg-gray-700 focus:bg-gray-700"
+                    className="hover:bg-gray-700 focus:bg-gray-700 rounded-md"
                   >
-                    <Link onClick={() => goToSection(refWhyUs)} className="text-white hover:text-gray-300">
+                    <button
+                      onClick={() => goToSection(refWhyUs)}
+                      className="text-white hover:text-gray-300 p-2 text-start"
+                    >
                       Por que nós?
-                    </Link>
+                    </button>
                   </DropdownItem>
                   <DropdownItem
-                    key="copy2"
+                    key="AI"
                     tabIndex={-1}
-                    className="hover:bg-gray-700 focus:bg-gray-700"
+                    className="hover:bg-gray-700 focus:bg-gray-700 rounded-md"
                   >
-                    <Link onClick={() => goToSection(refAiLogs)} className="text-white hover:text-gray-300">
+                    <button
+                      onClick={() => goToSection(refAiLogs)}
+                      className="text-white hover:text-gray-300 p-2 w-full text-start"
+                    >
                       IA
-                    </Link>
+                    </button>
                   </DropdownItem>
                   <DropdownItem
-                    key="copy3"
+                    key="tokenization"
                     tabIndex={-1}
-                    className="hover:bg-gray-700 focus:bg-gray-700"
+                    className="hover:bg-gray-700 focus:bg-gray-700 rounded-md"
                   >
-                    <Link onClick={() => goToSection(refTokenization)} className="text-white hover:text-gray-300">
+                    <button
+                      onClick={() => goToSection(refTokenization)}
+                      className="text-white hover:text-gray-300 p-2 text-start"
+                    >
                       Tokenização
-                    </Link>
+                    </button>
                   </DropdownItem>
                   <DropdownItem
-                    key="copy4"
+                    key="joinUs"
                     tabIndex={-1}
-                    className="hover:bg-gray-700 focus:bg-gray-700"
+                    className="hover:bg-gray-700 focus:bg-gray-700 rounded-md"
                   >
-                    <Link onClick={() => goToSection(refJoinUs)} className="text-white hover:text-gray-300">
+                    <button
+                      onClick={() => goToSection(refJoinUs)}
+                      className="text-white hover:text-gray-300 p-2 text-start"
+                    >
                       Junte-se
-                    </Link>
+                    </button>
                   </DropdownItem>
                   <DropdownItem
-                    key="copy5"
+                    key="entrar"
                     tabIndex={-1}
-                    className="hover:bg-gray-700 focus:bg-gray-700"
+                    className="hover:bg-gray-700 focus:bg-gray-700 rounded-md"
                   >
-                    <Link to="/auth" className="text-white hover:text-gray-300">
+                    <Link to="/auth" className="text-white hover:text-gray-300 block p-2 w-full text-start">
                       Entrar
                     </Link>
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </div>
-
-
           </div>
         )}
       </div>

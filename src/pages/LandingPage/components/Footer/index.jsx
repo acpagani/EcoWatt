@@ -4,7 +4,7 @@ export default function Footer({ isLP = false }) {
       className="w-full bg-eGray"
       style={{ height: isLP ? "30vh" : "20vh" }}
     >
-      <div className="container px-20 mx-auto h-full flex flex-col gap-10 justify-center">
+      <div className="container mx-auto px-10 sm:px-0 h-full flex flex-col gap-10 justify-center">
         <div className="flex flex-col items-center gap-1">
           <svg
             className="fill-eWhite w-40 h-14"

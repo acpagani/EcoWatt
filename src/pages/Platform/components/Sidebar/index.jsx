@@ -11,7 +11,7 @@ export default function Sidebar({ onClick }) {
   const generatingContent = useContext(GeneratingContentContext);
 
   return (
-    <aside className=" lg:w-[20vw] h-full flex flex-col items-start gap-10 py-10 px-5  xl:px-14 border-r-2 bg-eWhite">
+    <aside className=" lg:w-[20vw] h-screen flex flex-col items-start gap-10 py-10 px-5  xl:px-14 border-r-2 bg-eWhite">
     <div className="flex gap-4 justify-between w-full">
         <button onClick={onClick} className="block sm:hidden">
           <IoIosClose className="size-10" />

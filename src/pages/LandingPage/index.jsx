@@ -13,8 +13,8 @@ export default function LandingPage() {
   const refHero = useRef(null);
   const refRevolution = useRef(null);
   const refWhyUs = useRef(null);
-  const refJoinUs = useRef(null);
   const refAiLogs = useRef(null);
+  const refJoinUs = useRef(null);
   const refTokenization = useRef(null);
 
   return (
@@ -23,8 +23,8 @@ export default function LandingPage() {
       refHero={refHero} 
       refRevolution={refRevolution} 
       refWhyUs={refWhyUs} 
-      refJoinUs={refJoinUs}
       refAiLogs={refAiLogs}
+      refJoinUs={refJoinUs}
       refTokenization={refTokenization}
       isLP={true}
       />

@@ -64,7 +64,7 @@ export default function Plaftorm() {
 
   return (
     <GeneratingContentContext.Provider value={generatingContent}>
-      <div className="w-screen h-screen flex relative">
+      <div className={`max-w-screen max-h-screen flex relative ${active ? "overflow-hidden" : ""}`}>
         <div
           className={`absolute sm:static ${
             active ? "left-0" : "-left-full"
