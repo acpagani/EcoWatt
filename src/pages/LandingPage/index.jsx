@@ -6,7 +6,7 @@ import Hero from "./Sections/Hero";
 import Revolution from "./Sections/Revolution";
 import Tokenization from "./Sections/Tokenization";
 import WhyUs from "./Sections/WhyUs";
-import AiLogs from "./Sections/AILogs";
+import AiLogs from "./Sections/AiLogs";
 
 export default function LandingPage() {
 
